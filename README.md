@@ -1,5 +1,5 @@
 # zabbix_server-vagrant
-Laboratório de criação de um máquina virtual com vagrant, onde é realizado a instalação e configuração do Zabbix Server
+Laboratório de criação de uma máquina virtual com vagrant, onde é realizado a instalação e configuração do Zabbix Server
 
 Dependências
 -------------
@@ -26,7 +26,7 @@ Nome       | vCPUs | Memoria RAM | IP            | S.O.¹
 ZabbixServer     | 1     | 1024MB | 192.168.99.100 | ubuntu/focal64
 
 
->  Esses Sistemas operacionais estão sendo utilizado no formato de Boxes, é a forma como o vagrant chama as imagens do sistema operacional utilizado.
+>  Esse Sistema operacionai está sendo utilizado no formato de Boxes, é a forma como o vagrant chama as imagens do sistema operacional utilizado.
 >  A memória inicial de cada VM está definida com 1024MB (1GB). Este valor pode ser aumentado, caso necessário através do arquivo `Vagrantfile`.
 
 Criação do Laboratório
