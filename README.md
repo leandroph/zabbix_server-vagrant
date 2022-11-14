@@ -35,7 +35,7 @@ Criação do Laboratório
 Para criar o laboratório é necessário fazer o `git clone` desse repositório e, dentro da pasta baixada realizar a execução do `vagrant up`, conforme abaixo:
 
 ```bash
-git clone https://github.com/leandroph/docker-vagrant.git
+git clone https://github.com/leandroph/zabbix_server-vagrant.git
 cd docker-vagrant
 vagrant up
 ```
