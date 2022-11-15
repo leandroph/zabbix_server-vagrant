@@ -12,7 +12,6 @@ Vagrant.configure("2") do |config|
       machine.vm.box = "#{conf["image"]}"
       machine.vm.hostname = "#{name}"
       machine.vm.network "private_network", ip: "192.168.99.#{conf["ip"]}"
-      #machine.vm.network "private_network", guest: 80, host: 8080
       machine.vm.provider "virtualbox" do |vb|
         vb.name = "#{name}"
         vb.memory = conf["memory"]
@@ -31,8 +30,8 @@ Vagrant.configure("2") do |config|
         dpkg -i zabbix-release_5.0-1+focal_all.deb;
         apt update;
         apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent -y;
-        #sed 's@#date.timezone =@date.timezone=America/Sao_Paulo@' -i /etc/zabbix/apache.conf;
-        sed 's/# php_value date.timezone Europe\/Riga/php_value date.timezone America\/Sao_Paulo/' /etc/zabbix/apache.conf;
+         # set date.timezone in php.ini
+        sed -i 's|;date.timezone =|date.timezone = America/Sao_Paulo|' /etc/php/7.4/apache2/php.ini;
         # configure mysql
         echo -e "[mysqld]\ndefault-storage-engine = innodb" | sudo tee /etc/mysql/conf.d/mysqld.conf;
         systemctl restart mysql;
